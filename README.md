@@ -1,6 +1,6 @@
 # F3 README #
 
-* Version: 3-3-0
+* Version: 3-4-1
 * Codebase: https://github.com/ferstaberinde/F3
 * Developer: Please see credits section below.
 * Publishers: Fer (alanr@ferstaberinde.com)
@@ -29,6 +29,9 @@
 
 Version | Date | Notes
 
+* 3-4-1     | 19 JUL 2016 | Patch release - Various improvements (see change history).
+* 3-4-0     | 13 JUL 2016 | Patch release - APEX support and various improvements (see change history).
+* 3-4-0 RC1 | 04 JUL 2016 | Internal release - APEX support and various improvements (see change history).
 * 3-3-0     | 25 APR 2015 | Patch release - Various improvements (see change history).
 * 3-3-0 RC2 | 18 APR 2015 | Internal release - Various improvements (see change history). 
 * 3-3-0 RC1 | 08 APR 2015 | Internal release - Various improvements (see change history).
@@ -146,10 +149,10 @@ Version | Date | Notes
 
 ### F3 Credits ###
 
-* Contributors: Head | Harakka | Fer | Wolfenswan | Cam | turowicz | CaseMonster | Black Mamba | DarkTatka | Tigershark | cptnnick | Linux | Snippers
+* Contributors: Head | Harakka | Fer | Wolfenswan | Cam | turowicz | CaseMonster | Black Mamba | DarkTatka | Tigershark | cptnnick | Linux | Snippers | SuicideKing | Pasrules | darkChozo | Przemro | GeEom | JonBons | Ferrard Carson
 * Documentation: Fer | Wolfenswan | Dogface | Cam | Head | cptnnick | Snippers
 * Producers: Fer | Wolfenswan
-* Special Thanks: Arctor | BasterActual | batboyx2 | cptnnick | Dogface | Draakon | Landyacht | Linux | nolux | Pabstmirror | Zerith | Bear | JonBons | Poulern | Chairborn | captainblaffer
+* Special Thanks: Arctor | BasterActual | batboyx2 | cptnnick | Dogface | Draakon | Landyacht | Linux | nolux | Pabstmirror | Zerith | Bear | JonBons | Poulern | Chairborn | captainblaffer | Boarnoah | CostNo
 * Special thanks to everyone at: Folk ARPS | Basterd ArmA | Black sh33p | Bourbon Warfare | Phantactical | Pointfire | Project Awesome | Team One Tactical | The Company
 
 ### F2 Credits ###
@@ -172,7 +175,7 @@ Version | Date | Notes
 
 ## 03. COPYRIGHT STATEMENT ##
 
-F3 is composed of many components. Each component is (c) 2007/2008/2009/2010/2011/2012/2013/2014 its respective contributor(s). All rights reserved.
+F3 is composed of many components. Each component is (c) 2007/2008/2009/2010/2011/2012/2013/2014/2015/2016 its respective contributor(s). All rights reserved.
 
 
 
@@ -214,7 +217,7 @@ The online manual can be found at:
 
 ## 08. INSTALLATION ##
 
-To begin using the Software, move the F3.Altis folder into one of the following directories:
+To begin using the Software, move the F3.VR folder into one of the following directories:
 
 * \My Documents\Arma 3\MPMissions\
 * \My Documents\Arma 3 Other Profiles\YourPlayerName\MPMissions\
@@ -236,6 +239,101 @@ Fer :) (alanr@ferstaberinde.com) (on behalf of all F3 / F2 / BAS f contributors)
 ### F3 Change History ###
 
 Version | Date
+
+3-4-1 | 19 JUL 2016
+
+* Added F3 Gendarmerie component, with support for this added to:
+  * Briefing Template component.
+  * F3 Folk ARPS Assign Gear Script component.
+  * F3 Folk ARPS Group Markers component.
+  * F3 Folk ARPS Group IDs component.
+* Updated F3 Folk ARPS Assign Gear Script component:
+  * Various minor fixes.
+* Updated F3 Folk ARPS Platoons component:
+  * Fixed issues with order of Syndikat slots.
+* Updated Insignia component:
+  * Automatically supports mission-maker placed Pacific units (NATO and CSAT).
+* Updated Mission Header component documentation.
+
+3-4-0 | 13 JUL 2016
+
+* Updated Assign Gear component:
+  * Implemented new Folk ARPS 2016 loadout options.
+  * Added support for the Syndikat faction.
+  * Added support for the NATO Pacific faction.
+  * Added support for the CSAT Pacific faction.
+  * Pilots can now repair vehicles (via the new trait command).
+  * Vehicle and crate loadouts now split into separate files per faction.
+  * All IF checks now compare the faction to an array of possible factions.
+  * Strings such as 'aaf', 'nato' etc. can now be used when forcing a specific faction loadout (instead of a precise faction string such as 'ind_f').
+* Updated Assign AI Gear component:
+  * Added support for the Syndikat faction.
+  * All factions are now processed unless specifically excluded.
+  * Non-recognised units keep their default gear.
+* Updated Admin Briefing component:
+  * Added support for the Syndikat faction.
+  * NATO and CSAT Pacific factions see default NATO and CSAT breifings.
+  * Component checks against BIS factions
+* Updated F3 Folk ARPS Platoons component:
+  * Changed OrBat to Folk ARPS 2015 pattern:
+     * Infantry squads now: SL, medic and 2 x 6-man FTs.
+     * Mechanised squads now:  SL, medic, 1 x 6-man FT and 1 x IFV (with crew). 
+  * Added a pre-placed Syndikat platoon with attachments.
+  * Ranks of units adjusted to allow correct leadership when merging groups
+  * JTAC CAS elements now virtual.
+  * Removed pre-placed 'reserved for JIP' groups.
+* Updated F3 Folk ARPS Group IDs component:
+  * Moved group name definitions to the group object in EDEN editor.
+  * Added support for the Syndikat faction.
+* Updated F3 Folk ARPS Group Markers component:
+  * Component now gets group names from group object in EDEN editor.
+  * Added support for the Syndikat faction.
+  * NATO and CSAT Pacific factions are shown the default NATO and CSAT markers.
+  * Changed switch structure to several IF-checks (making it easier to show the same marker to several units / factions - you only need to add a string)
+* Updated F3 Spectator Script component:
+  * Fix spectator jumping on keyboard input.
+* Updated Insignia component:
+  * Added new insignia patches for NATO and CSAT Pacific factions.
+  * Script variable toggles NATO / CSAT factions between Altis and Tanoa patches.
+  * Script variable can also enable CSAT urban patches.
+* Updated Naming your mission and Loading Screen components:
+  * Moved some settings from description.ext to the EDEN editor:
+     * Mission name.
+     * Author name.
+     * Mission load and overview screen texts and pictures.
+* Updated Medical Systems Support component:
+  * Fixed: SWS would on occasion not properly immobilise downed players.
+* Updated Mission Conditions Selector component:
+  * Pre-defined conditions now integrate time and atmospheric options.
+  * Parameters allow overrides for fog and wind settings.
+  * Pre-defined condtions adapt to support dawn/dusk on Altis and Tanoa.
+  * Added "Use mission settings" option to mission conditions parameter.
+* Updated Mute Orders and Reports component:
+  * Muting now only applies to playable AI units. 
+* Updated PreMount component:
+  * Removed pre-placed modules (component can still be used via script). 
+* Updated Radio Systems Support component:
+  * Added support for defaulting ACRE2 radios to a starting channel.
+  * TFR fix and radio designation changes:
+     * Long range default is now ch1.
+     * Short range radio (5km) to replace backpackRadios for weapons team leader (assistant) except the sniper's spotter.
+     * Vehicle teams expected to use vehicle radios for long range comms.
+  * Removed support for ACRE1.
+* Updated Zeus Support component:
+  * Pre-Placed ZEUS units assign F3 AI Skill to created units.
+* Various optimisations:
+  * ACRE2 (Radio Systems Support component).
+  * fn_setAISkill now exits without an error message if AI skills are not set.
+  * Group IDs component.
+  * Insignia component.
+  * Move CfgFunctions F3 definitions into its own hpp file.
+  * Parameters system now works in singleplayer editor and has been made slightly faster.
+  * Re-ordered the init.sqf file code blocks.
+* Removed UAV Recharging component.
+
+3-4-0 RC1 | 04 JUL 2016
+
+* Please see change history for release v3-4-0.
 
 3-3-0 | 25 APR 2015
 
